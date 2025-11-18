@@ -1,7 +1,9 @@
-export default function Footer() {
+const Footer = () => {
   return (
-    <footer>
-      <p>&copy; 2025 - Mon App React</p>
+    <footer className="footer">
+      <p>© {new Date().getFullYear()} Ton Nom — Portfolio Big Data & ML</p>
     </footer>
   );
-}
+};
+
+export default Footer;
