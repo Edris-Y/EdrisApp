@@ -1,11 +1,21 @@
-// src/pages/Home.jsx
-function Home() {
+import Hero from "../sections/Hero";
+import AboutSection from "../sections/AboutSection";
+import Projects from "../sections/Projects";
+import Skills from "../sections/Skills";
+import Experience from "../sections/Experience";
+import Contact from "../sections/Contact";
+
+const Home = () => {
   return (
-    <section className="page">
-      <h1>Accueil 🏠</h1>
-      <p>Bienvenue sur ton site React, Edris Youssef.</p>
-    </section>
+    <>
+      <Hero />
+      <AboutSection />
+      <Projects />
+      <Skills />
+      <Experience />
+      <Contact />
+    </>
   );
-}
+};
 
 export default Home;

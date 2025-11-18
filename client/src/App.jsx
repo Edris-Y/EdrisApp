@@ -4,7 +4,6 @@ import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
 import About from "./pages/About";
 
-// ⚠️ On force la même base partout (dev + prod)
 const basename = "/EdrisApp";
 
 function App() {
