@@ -1,3 +1,11 @@
-export default function About() {
-  return <h1>À propos de cette application</h1>;
+// src/pages/About.jsx
+function About() {
+  return (
+    <section className="page">
+      <h1>À propos ℹ️</h1>
+      <p>Cette page parle de ton projet.</p>
+    </section>
+  );
 }
+
+export default About;

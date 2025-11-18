@@ -1,15 +1,26 @@
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import { Outlet } from 'react-router-dom';
+// src/layouts/MainLayout.jsx
+import { Outlet, NavLink } from "react-router-dom";
 
-export default function MainLayout() {
+function MainLayout() {
   return (
-    <>
-      <Header />
-      <main>
+    <div>
+      <header>
+        <nav className="nav">
+          <NavLink to="/" className="nav-link">
+            Accueil
+          </NavLink>
+          <NavLink to="/about" className="nav-link">
+            À propos
+          </NavLink>
+        </nav>
+      </header>
+
+      <main className="main-content">
+        {/* Ici s'affichent Home / About */}
         <Outlet />
       </main>
-      <Footer />
-    </>
+    </div>
   );
 }
+
+export default MainLayout;
