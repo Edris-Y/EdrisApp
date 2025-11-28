@@ -1,10 +1,11 @@
 import { NavLink } from "react-router-dom";
+import logoImage from '../assets/LogoMain.png';
 
 const TopNav = () => {
   const links = [
     { path: "/", label: "Accueil" },
     { path: "/projects", label: "Projets" },
-    { path: "/experience", label: "Expérience" }, // Assurez-vous que la route existe
+    { path: "/experience", label: "Expérience" },
     { path: "/skills", label: "Compétences" },
     { path: "/about", label: "À propos" },
   ];
@@ -21,21 +22,21 @@ const TopNav = () => {
       }} 
     >
       
-      {/* LOGO CLASS (Carré Bleu + Nom Noir) */}
+      {/* ZONE LOGO */}
       <NavLink to="/" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
-        <div style={{ 
-          width: '36px', height: '36px', 
-          background: '#2563eb', /* Bleu classe */
-          borderRadius: '8px', color: 'white', 
-          display: 'flex', alignItems: 'center', justifyContent: 'center', 
-          fontWeight: '700', fontSize: '1.4rem',
-          boxShadow: '0 4px 10px rgba(37, 99, 235, 0.2)'
-        }}>
-          E
-        </div>
-        <span className="logo-text">
-          Edris Youssef
-        </span>
+        
+        {/* Votre Image de Logo (Agrandie) */}
+        <img 
+          src={logoImage} 
+          alt="Edris Youssef" 
+          style={{ 
+            height: '50px', // Agrandie de 32px à 50px
+            maxHeight: '100%', // Sécurité pour ne pas dépasser la navbar
+            width: 'auto', 
+            objectFit: 'contain',
+            display: 'block'
+          }} 
+        />
       </NavLink>
 
       {/* LIENS DE NAVIGATION */}

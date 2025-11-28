@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logoImage from '../assets/LogoMain.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -66,9 +67,20 @@ const Footer = () => {
         {/* COPYRIGHT */}
         <div className="footer-bottom">
           <p>© {currentYear} Edris Youssef. Tous droits réservés.</p>
-          <p style={{ display: "flex", alignItems: "center", gap: "5px" }}>
-            Fait avec <span style={{ color: "#ef4444", fontSize: "1.2rem" }}>♥</span> et React
-          </p>
+          {/* ZONE LOGO */}
+          <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
+            <img 
+              src={logoImage} 
+              alt="Edris Youssef" 
+              style={{ 
+                height: '50px',
+                maxHeight: '100%',
+                width: 'auto', 
+                objectFit: 'contain',
+                display: 'block'
+              }} 
+            />
+          </Link>
         </div>
 
       </div>

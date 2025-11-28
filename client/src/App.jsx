@@ -9,11 +9,11 @@ import Contact from "./pages/Contact";
 import Experience from "./pages/Experience";
 
 // Dans <Routes> ... <Route path="/" element={<MainLayout />}>
-const basename = "/EdrisApp";
+// const basename = "/EdrisApp";
 
 function App() {
   return (
-    <BrowserRouter basename={basename}>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
