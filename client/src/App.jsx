@@ -7,8 +7,7 @@ import Skills from "./pages/Skills";
 import Contact from "./pages/Contact";
 import Experience from "./pages/Experience";
 
-const basename = "/EdrisApp";
-
+const basename = "/";
 function App() {
   return (
     <BrowserRouter basename={basename}>

@@ -3,7 +3,7 @@ import { skills } from "../data/skills";
 
 const Skills = () => {
   const [filter, setFilter] = useState("Tout");
-  const categories = ["Tout", "Langages", "Frameworks", "Outils"];
+  const categories = ["Tout", "Langages", "Frameworks", "Outils","Automatisation"];
 
   const filteredSkills = filter === "Tout" 
     ? skills 
