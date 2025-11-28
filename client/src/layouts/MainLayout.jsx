@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
-import BottomNav from "../components/BottomNav"; // Remplace Header Mobile
-import TopNav from "../components/TopNav";       // Remplace Header Desktop
-import Footer from "../components/Footer";       // Votre Footer existant
+import BottomNav from "../components/BottomNav";
+import TopNav from "../components/TopNav";       
+import Footer from "../components/Footer";      
 import { useEffect, useState } from "react";
 
 const MainLayout = () => {
