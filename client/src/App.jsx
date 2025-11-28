@@ -5,9 +5,9 @@ import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Skills from "./pages/Skills";
 import Contact from "./pages/Contact";
+import Experience from "./pages/Experience";
 
-// On enlève le basename ou on le met à vide
-const basename = "/"; 
+const basename = "/EdrisApp";
 
 function App() {
   return (
@@ -18,6 +18,7 @@ function App() {
           <Route path="projects" element={<Projects />} />
           <Route path="skills" element={<Skills />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="experience" element={<Experience />} />
           <Route path="about" element={<About />} />
         </Route>
       </Routes>
