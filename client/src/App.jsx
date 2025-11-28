@@ -5,22 +5,19 @@ import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Skills from "./pages/Skills";
 import Contact from "./pages/Contact";
-// ... autres imports
-import Experience from "./pages/Experience";
 
-// Dans <Routes> ... <Route path="/" element={<MainLayout />}>
-// const basename = "/EdrisApp";
+// On enlève le basename ou on le met à vide
+const basename = "/"; 
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
           <Route path="projects" element={<Projects />} />
           <Route path="skills" element={<Skills />} />
           <Route path="contact" element={<Contact />} />
-          <Route path="experience" element={<Experience />} />
           <Route path="about" element={<About />} />
         </Route>
       </Routes>
