@@ -1,83 +1,213 @@
-/* :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  /* Palette de couleurs */
+  --primary-blue: #2563eb;
+  --primary-dark: #1e40af;
+  --bg-color: #f8fafc;
+  --card-bg: #ffffff;
+  --text-main: #1e293b;
+  --text-secondary: #64748b;
+  --border-color: #e2e8f0;
+  --nav-height-mobile: 70px;
+  --nav-height-desktop: 70px;
+  
+  /* Variables d'animation */
+  --ease-spring: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+/* --- ANIMATIONS --- */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-a:hover {
-  color: #535bf2;
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+@keyframes ping {
+  75%, 100% { transform: scale(2); opacity: 0; }
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #0f172a;
-  color: #e5e7eb;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+  padding-bottom: var(--nav-height-mobile);
+  animation: fadeInUp 0.5s ease-out;
 }
 
-a {
-  color: inherit;
+@media (min-width: 768px) {
+  body { padding-bottom: 0; padding-top: var(--nav-height-desktop); }
+}
+
+a { text-decoration: none; color: inherit; transition: color 0.2s; }
+ul { list-style: none; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  width: 90%;
+}
+
+/* --- STYLE PHOTO PROFIL MODERNE --- */
+.profile-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 25px;
+  /* Animation flottante douce */
+  animation: float 6s ease-in-out infinite;
+}
+
+.profile-wrapper::before {
+  /* Effet de lueur derrière la photo */
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 40px; /* Forme Squircle */
+  background: linear-gradient(135deg, rgba(37,99,235,0.3), rgba(147,51,234,0.3));
+  filter: blur(15px);
+  z-index: -1;
+}
+
+.profile-img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 35px; /* Forme Squircle (iOS style) */
+  border: 4px solid white;
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+  background-color: white;
+  transition: transform 0.3s var(--ease-spring);
+}
+
+.profile-wrapper:hover .profile-img {
+  transform: scale(1.02) rotate(-2deg);
+}
+
+/* --- BOUTONS --- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 12px 24px; border-radius: 12px; font-weight: 600; cursor: pointer;
+  border: none; font-size: 1rem; width: 100%; transition: all 0.3s var(--ease-spring);
+}
+.btn:active { transform: scale(0.97); }
+@media (min-width: 768px) { .btn { width: auto; } }
+
+.btn-primary {
+  background-color: var(--primary-blue); color: white;
+  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.1);
+}
+.btn-primary:hover {
+  background-color: var(--primary-dark); transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+}
+
+.btn-secondary { background-color: white; border: 1px solid var(--border-color); color: var(--text-main); }
+.btn-secondary:hover { background-color: #f1f5f9; transform: translateY(-2px); }
+
+/* --- FILTRES --- */
+.filter-tabs { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 10px; margin-bottom: 20px; scrollbar-width: none; }
+.filter-tabs::-webkit-scrollbar { display: none; }
+.filter-chip {
+  padding: 8px 20px; background: white; border: 1px solid var(--border-color);
+  border-radius: 99px; font-size: 0.9rem; white-space: nowrap; cursor: pointer;
+  color: var(--text-secondary); font-weight: 600; transition: all 0.2s;
+}
+.filter-chip.active { background: #0f172a; color: white; border-color: #0f172a; }
+
+/* --- BENTO GRID SYSTEM --- */
+.bento-grid {
+  display: grid;
+  /* Mobile : 1 colonne par défaut */
+  grid-template-columns: 1fr; 
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Tablette et + : 2 colonnes */
+@media (min-width: 640px) {
+  .bento-grid { grid-template-columns: repeat(2, 1fr); }
+}
+/* PC et + : 3 colonnes */
+@media (min-width: 1024px) {
+  .bento-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.bento-card {
+  background: white; border-radius: 24px; padding: 25px;
+  border: 1px solid var(--border-color);
+  display: flex; flex-direction: column; justify-content: space-between;
+  min-height: 240px; transition: all 0.3s var(--ease-spring);
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+  text-decoration: none; color: inherit;
+  overflow: hidden; /* Important pour les images */
+}
+.bento-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px -5px rgba(0,0,0,0.08);
+}
+
+/* Style spécifique pour les cartes projets (image en haut) */
+.project-card-img {
+  height: 160px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 15px;
+  background-color: #f1f5f9;
+}
+/* =========================================
+   --- NAVIGATION DESKTOP (TopNav) ---
+   ========================================= */
+
+/* La barre elle-même (Glassmorphism propre) */
+.desktop-nav {
+  background: rgba(255, 255, 255, 0.95) !important; /* Blanc presque opaque */
+  backdrop-filter: blur(12px); /* Flou derrière */
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color) !important;
+  transition: all 0.3s ease;
+}
+
+/* Les liens (Accueil, Projets, etc.) */
+.nav-link-desktop {
+  text-decoration: none;
+  color: var(--text-secondary); /* Gris par défaut */
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 8px 16px;
+  border-radius: 10px; /* Coins arrondis */
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+/* Au survol : texte bleu et fond très léger */
+.nav-link-desktop:hover {
+  color: var(--primary-blue);
+  background-color: #eff6ff; /* Bleu très très pâle */
+  transform: translateY(-1px);
+}
+
+/* Lien Actif (Page en cours) */
+.nav-link-desktop.active {
+  color: var(--primary-blue);
+  background-color: #eff6ff;
+  font-weight: 700; /* Plus gras pour bien repérer */
+}
+
+/* Le Logo Textuel */
+.logo-text {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  color: #0f172a; /* Noir profond */
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
+  transition: color 0.3s ease;
+}
+
+.logo-text:hover {
+  color: var(--primary-blue);
 }
