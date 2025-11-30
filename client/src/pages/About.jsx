@@ -122,10 +122,16 @@ const About = () => {
 
       {/* 3. Boutons du bas */}
       <div style={{ display: "flex", gap: "15px", marginTop: "40px" }}>
-        <a href="/cv.pdf" target="_blank" className="btn btn-secondary" style={{ flex: 1 }}>
-          📄 Télécharger mon CV
+        <a
+          href="/CV_Travail_Edris.pdf"  // <-- Le "/" pointe directement vers le dossier public
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btn-secondary"
+          style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", minWidth: "200px" }}
+        >
+          📄 Télécharger CV
         </a>
-        <Link to="/contact" className="btn btn-primary" style={{ flex: 1 }}>
+        <Link to="/contact" className="btn btn-primary" style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", minWidth: "200px" }}>
           ✉️ Me Contacter
         </Link>
       </div>
