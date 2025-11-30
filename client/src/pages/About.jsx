@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { experiences } from "../data/experience";
-import profilePic from '../assets/1750428291992.jpg';
+import profilePic from '../assets/PhotoEdris.png';
 const About = () => {
   const [openSection, setOpenSection] = useState("parcours");
 

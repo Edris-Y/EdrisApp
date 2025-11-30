@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { projects } from "../data/projects";
 import { experiences } from "../data/experience";
-import profilePic from '../assets/1750428291992.jpg';
+import profilePic from '../assets/PhotoEdris.png';
 
 const Home = () => {
   const recentProjects = projects && projects.length > 0 ? [...projects].reverse().slice(0, 3) : [];
