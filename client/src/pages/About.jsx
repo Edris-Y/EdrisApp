@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { experiences } from "../data/experience";
-
+import profilePic from '../assets/1750428291992.jpg';
 const About = () => {
   const [openSection, setOpenSection] = useState("parcours");
 
@@ -18,7 +18,7 @@ const About = () => {
         {/* Photo avec effet de halo */}
         <div className="profile-wrapper">
           <img 
-            src="src/assets/1750428291992.jpg" 
+            src={profilePic} 
             alt="Profil" 
             className="profile-img"
           />
