@@ -123,8 +123,8 @@ const About = () => {
       {/* 3. Boutons du bas */}
       <div style={{ display: "flex", gap: "15px", marginTop: "40px" }}>
         <a
-          href="/CV_Travail_Edris.pdf"  // <-- Le "/" pointe directement vers le dossier public
-          target="_blank"
+          href="/CV_Travail_Edris.pdf" 
+  target="_blank"
           rel="noopener noreferrer"
           className="btn btn-secondary"
           style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", minWidth: "200px" }}
