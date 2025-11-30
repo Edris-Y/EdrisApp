@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { projects } from "../data/projects";
 import { experiences } from "../data/experience";
+import profilePic from '../assets/1750428291992.jpg';
 
 const Home = () => {
   const recentProjects = projects && projects.length > 0 ? [...projects].reverse().slice(0, 3) : [];
@@ -15,7 +16,7 @@ const Home = () => {
         
         <div className="profile-wrapper">
           <img 
-            src="src/assets/1750428291992.jpg" 
+            src={profilePic}
             alt="Profil" 
             className="profile-img"
           />
