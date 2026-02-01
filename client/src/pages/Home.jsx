@@ -4,7 +4,7 @@ import { experiences } from "../data/experience";
 import profilePic from '../assets/PhotoEdris.png';
 
 const Home = () => {
-  const recentProjects = projects && projects.length > 0 ? [...projects].reverse().slice(0, 3) : [];
+const recentProjects = projects.slice(0, 3);
   const currentJob = experiences && experiences.length > 0 ? experiences[0] : null;
 
   return (
@@ -62,7 +62,7 @@ const Home = () => {
               <h3 style={{ fontSize: "1.1rem", fontWeight: "700", color: "#0f172a", margin: 0 }}>Stack Technique</h3>
             </div>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
-              {["Webflow", "Python", "React", "SQL", "Admin Sys."].slice(0,5).map(tag => (
+              {["UML", "Python", "Modelisation Objet", "SQL", "Analyse de Données"].slice(0,5).map(tag => (
                 <span key={tag} style={{ 
                   background: "#f8fafc", border: "1px solid #e2e8f0", padding: "6px 10px", 
                   borderRadius: "8px", fontSize: "0.8rem", color: "#475569", fontWeight: "500"
@@ -84,7 +84,7 @@ const Home = () => {
             </div>
             {currentJob ? (
               <>
-                <p style={{ fontSize: "0.75rem", color: "#64748b", textTransform: "uppercase", fontWeight: "bold", marginBottom: "5px" }}>Actuellement</p>
+                <p style={{ fontSize: "0.75rem", color: "#64748b", textTransform: "uppercase", fontWeight: "bold", marginBottom: "5px" }}>Récemment</p>
                 <div style={{ fontWeight: "700", color: "#0f172a", fontSize: "1rem" }}>{currentJob.role}</div>
                 <div style={{ color: "#2563eb", fontSize: "0.9rem" }}>chez {currentJob.company}</div>
               </>

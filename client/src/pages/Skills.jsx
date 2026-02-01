@@ -11,13 +11,33 @@ const Skills = () => {
 
   // Couleurs dynamiques pour les icônes
   const getColor = (category) => {
-    switch (category) {
-      case "Langages": return { bg: "#dbeafe", text: "#2563eb" }; // Bleu
-      case "Frameworks": return { bg: "#f3e8ff", text: "#9333ea" }; // Violet
-      case "Outils": return { bg: "#dcfce7", text: "#16a34a" }; // Vert
-      default: return { bg: "#f1f5f9", text: "#475569" };
-    }
-  };
+  switch (category) {
+    case "Langages":
+      return { bg: "#dbeafe", text: "#2563eb" }; // Bleu
+
+    case "Frameworks":
+      return { bg: "#f3e8ff", text: "#9333ea" }; // Violet
+
+    case "Outils":
+      return { bg: "#dcfce7", text: "#16a34a" }; // Vert
+
+    case "Automatisation":
+      return { bg: "#fff7ed", text: "#ea580c" }; // Orange
+
+    case "Modélisation":
+      return { bg: "#ecfeff", text: "#0891b2" }; // Cyan
+
+    case "Méthodologie":
+      return { bg: "#fef9c3", text: "#ca8a04" }; // Jaune
+
+    case "Gestion de projet":
+      return { bg: "#fce7f3", text: "#be185d" }; // Rose
+
+    default:
+      return { bg: "#f1f5f9", text: "#475569" }; // Gris
+  }
+};
+
 
   return (
     <div className="container" style={{ paddingTop: "40px", paddingBottom: "80px" }}>
