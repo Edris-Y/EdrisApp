@@ -123,7 +123,7 @@ const About = () => {
       {/* 3. Boutons du bas */}
       <div style={{ display: "flex", gap: "15px", marginTop: "40px" }}>
         <a
-          href="/CV_Alter_EdrisY.pdf" 
+          href="/CV_Alternance_EdrisY.pdf" 
   target="_blank"
           rel="noopener noreferrer"
           className="btn btn-secondary"
