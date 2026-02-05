@@ -23,7 +23,7 @@ export const projects = [
       "Gestion de projet (MoSCoW)"
     ],
     image: "https://placehold.co/600x400/2563eb/white?text=Projet+TRICE",
-    link: "public/RapportTRICE.pdf"
+    link: "/RapportTRICE.pdf"
   },
   {
     id: 3,
