@@ -12,7 +12,6 @@ const Projects = () => {
   return (
     <div className="container" style={{ paddingTop: "40px", paddingBottom: "80px" }}>
       
-      {/* En-tête */}
       <div style={{ textAlign: "center", marginBottom: "40px" }}>
         <h2 style={{ fontSize: "2rem", fontWeight: "800", color: "#0f172a", marginBottom: "10px" }}>
           Mes Projets
@@ -20,7 +19,6 @@ const Projects = () => {
         <p style={{ color: "#64748b" }}>Une sélection de mes travaux récents.</p>
       </div>
 
-      {/* Filtres */}
       <div className="filter-tabs" style={{ justifyContent: "center" }}>
         {categories.map(cat => (
           <button 
@@ -33,12 +31,10 @@ const Projects = () => {
         ))}
       </div>
 
-      {/* Grille BENTO */}
       <div className="bento-grid">
         {filteredProjects.map((project) => (
           <a href={project.link || "#"} key={project.id} className="bento-card" style={{ padding: "0", border: "none", overflow: "hidden" }}>
             
-            {/* Image (prend toute la largeur haute) */}
             <div style={{ height: "200px", width: "100%", overflow: "hidden", position: "relative" }}>
               <img 
                 src={project.image || "https://placehold.co/600x400/f1f5f9/94a3b8?text=Project"} 
@@ -52,12 +48,10 @@ const Projects = () => {
               </div>
             </div>
 
-            {/* Contenu */}
             <div style={{ padding: "25px", flex: 1, display: "flex", flexDirection: "column", border: "1px solid #e2e8f0", borderTop: "none", borderRadius: "0 0 24px 24px" }}>
               <h3 style={{ fontSize: "1.2rem", fontWeight: "700", color: "#0f172a", marginBottom: "10px" }}>{project.title}</h3>
               <p style={{ fontSize: "0.95rem", color: "#64748b", marginBottom: "20px", flex: 1 }}>{project.description}</p>
               
-              {/* Tags Tech */}
               <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "20px" }}>
                 {project.tech.map(t => (
                   <span key={t} className="tech-tag">
@@ -66,7 +60,6 @@ const Projects = () => {
                 ))}
               </div>
 
-              {/* Bouton Voir */}
               <div className="btn btn-primary" style={{ width: "100%", marginTop: "auto" }}>
                 Voir le projet
               </div>

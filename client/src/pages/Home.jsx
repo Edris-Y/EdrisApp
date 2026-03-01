@@ -10,8 +10,7 @@ const recentProjects = projects.slice(0, 3);
   return (
     <div className="container" style={{ paddingBottom: "80px" }}>
       
-      {/* --- HERO SECTION --- */}
-      {/* Ajout de padding-top plus grand pour éviter l'effet "collé" en haut */}
+    
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", padding: "60px 0 20px" }}>
         
         <div className="profile-wrapper">
@@ -51,10 +50,8 @@ const recentProjects = projects.slice(0, 3);
       </div>
 
 
-      {/* --- BENTO GRID --- */}
       <div className="bento-grid">
 
-        {/* 1. CARTE COMPÉTENCES */}
         <Link to="/skills" className="bento-card">
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "15px" }}>
@@ -75,7 +72,6 @@ const recentProjects = projects.slice(0, 3);
           <div style={{ marginTop: "20px", fontSize: "0.9rem", color: "#2563eb", fontWeight: "600" }}>Voir tout →</div>
         </Link>
 
-        {/* 2. CARTE EXPÉRIENCE */}
         <Link to="/about" className="bento-card" style={{ background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)" }}>
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "15px" }}>
@@ -95,20 +91,17 @@ const recentProjects = projects.slice(0, 3);
           <div style={{ marginTop: "20px", fontSize: "0.9rem", color: "#2563eb", fontWeight: "600" }}>Voir l'historique →</div>
         </Link>
 
-        {/* 3. CARTE CONTACT */}
         <Link to="/contact" className="bento-card" style={{ background: "#0f172a", color: "white", border: "none", justifyContent: "center", alignItems: "center", textAlign: "center", minHeight: "160px" }}>
           <div style={{ fontSize: "2rem", marginBottom: "10px" }}>👋</div>
           <h3 style={{ fontSize: "1.1rem", fontWeight: "700", marginBottom: "5px", color: "white" }}>Me contacter</h3>
           <p style={{ color: "#94a3b8", fontSize: "0.85rem", margin: 0 }}>Disponible pour vos projets.</p>
         </Link>
 
-        {/* SEPARATEUR PROJETS */}
         <div style={{ gridColumn: "1 / -1", marginTop: "20px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <h3 style={{ fontSize: "1.2rem", fontWeight: "700", color: "#0f172a", margin: 0 }}>Projets Récents</h3>
           <Link to="/projects" style={{ fontSize: "0.9rem", color: "#64748b" }}>Voir tout</Link>
         </div>
 
-        {/* 4. CARTES PROJETS (Compactes) */}
         {recentProjects.map((project) => (
           <Link to="/projects" key={project.id} className="bento-card" style={{ padding: "15px" }}>
             <img 

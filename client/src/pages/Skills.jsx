@@ -13,28 +13,28 @@ const Skills = () => {
   const getColor = (category) => {
   switch (category) {
     case "Langages":
-      return { bg: "#dbeafe", text: "#2563eb" }; // Bleu
+      return { bg: "#dbeafe", text: "#2563eb" }; 
 
     case "Frameworks":
-      return { bg: "#f3e8ff", text: "#9333ea" }; // Violet
+      return { bg: "#f3e8ff", text: "#9333ea" };
 
     case "Outils":
-      return { bg: "#dcfce7", text: "#16a34a" }; // Vert
+      return { bg: "#dcfce7", text: "#16a34a" }; 
 
     case "Automatisation":
-      return { bg: "#fff7ed", text: "#ea580c" }; // Orange
+      return { bg: "#fff7ed", text: "#ea580c" }; 
 
     case "Modélisation":
-      return { bg: "#ecfeff", text: "#0891b2" }; // Cyan
+      return { bg: "#ecfeff", text: "#0891b2" }; 
 
     case "Méthodologie":
-      return { bg: "#fef9c3", text: "#ca8a04" }; // Jaune
+      return { bg: "#fef9c3", text: "#ca8a04" }; 
 
     case "Gestion de projet":
-      return { bg: "#fce7f3", text: "#be185d" }; // Rose
+      return { bg: "#fce7f3", text: "#be185d" }; 
 
     default:
-      return { bg: "#f1f5f9", text: "#475569" }; // Gris
+      return { bg: "#f1f5f9", text: "#475569" }; 
   }
 };
 
@@ -42,7 +42,6 @@ const Skills = () => {
   return (
     <div className="container" style={{ paddingTop: "40px", paddingBottom: "80px" }}>
       
-      {/* En-tête simple */}
       <div style={{ textAlign: "center", marginBottom: "40px" }}>
         <h2 style={{ fontSize: "2rem", fontWeight: "800", color: "#0f172a", marginBottom: "10px" }}>
           Mes Compétences
@@ -50,7 +49,6 @@ const Skills = () => {
         <p style={{ color: "#64748b" }}>Les outils et technologies que je maîtrise.</p>
       </div>
       
-      {/* Filtres modernes */}
       <div className="filter-tabs" style={{ justifyContent: "center" }}>
         {categories.map(cat => (
           <button 
@@ -63,7 +61,6 @@ const Skills = () => {
         ))}
       </div>
 
-      {/* Grille BENTO responsive */}
       <div className="bento-grid" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))" }}>
         {filteredSkills.map((skill) => {
           const colors = getColor(skill.category);
@@ -71,11 +68,10 @@ const Skills = () => {
           return (
             <div key={skill.id} className="bento-card" style={{ padding: "20px", alignItems: "center", textAlign: "center", minHeight: "auto" }}>
               
-              {/* Icône colorée */}
               <div style={{ 
                 width: "60px", height: "60px", 
                 background: colors.bg, color: colors.text,
-                borderRadius: "20px", // Squircle
+                borderRadius: "20px", 
                 display: "flex", alignItems: "center", justifyContent: "center", 
                 fontWeight: "bold", fontSize: "1.5rem",
                 marginBottom: "15px",
@@ -92,7 +88,6 @@ const Skills = () => {
                   {skill.category}
                 </span>
 
-                {/* Barre de progression stylisée */}
                 <div style={{ width: "100%", height: "6px", background: "#f1f5f9", borderRadius: "99px", overflow: "hidden", marginTop: "15px" }}>
                   <div style={{ 
                     width: `${skill.level}%`, 

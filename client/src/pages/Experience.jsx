@@ -6,10 +6,9 @@ const Experience = () => {
       <h2 style={{ textAlign: "center", marginBottom: "40px" }}>Mon Parcours</h2>
 
       <div style={{ position: "relative", paddingLeft: "20px" }}>
-        {/* Ligne verticale de la timeline */}
         <div style={{ 
           position: "absolute", 
-          left: "29px", // Ajusté pour centrer avec les icônes
+          left: "29px", 
           top: "10px", 
           bottom: "0", 
           width: "2px", 
@@ -19,30 +18,25 @@ const Experience = () => {
         {experiences.map((exp) => (
           <div key={exp.id} style={{ display: "flex", gap: "20px", marginBottom: "40px", position: "relative" }}>
             
-            {/* Icône de la Timeline (Rond) */}
             <div style={{ 
               width: "40px", 
               height: "40px", 
               borderRadius: "50%", 
-              background: exp.type === 'education' ? "#eff6ff" : "#f0fdf4", // Bleu pour école, Vert pour travail (subtil)
+              background: exp.type === 'education' ? "#eff6ff" : "#f0fdf4", 
               border: `2px solid ${exp.type === 'education' ? "#2563eb" : "#16a34a"}`,
               display: "flex", 
               alignItems: "center", 
               justifyContent: "center",
-              zIndex: 1, // Pour être au-dessus de la ligne
+              zIndex: 1, 
               flexShrink: 0
             }}>
-              {/* Icône SVG conditionnelle */}
               {exp.type === 'education' ? (
-                // Chapeau Diplômé
                 <svg width="20" height="20" fill="none" stroke={exp.type === 'education' ? "#2563eb" : "#16a34a"} strokeWidth="2" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
               ) : (
-                // Valise Travail
                 <svg width="20" height="20" fill="none" stroke={exp.type === 'education' ? "#2563eb" : "#16a34a"} strokeWidth="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
               )}
             </div>
 
-            {/* Carte de contenu */}
             <div style={{ 
               flex: 1, 
               background: "white", 
