@@ -12,10 +12,8 @@ const About = () => {
   return (
     <div className="container" style={{ paddingTop: "40px", paddingBottom: "40px", maxWidth: "800px", margin: "0 auto" }}>
       
-      {/* 1. En-tête Profil Moderne (Style Squircle) */}
       <div style={{ textAlign: "center", marginBottom: "40px" }}>
         
-        {/* Photo avec effet de halo */}
         <div className="profile-wrapper">
           <img 
             src={profilePic} 
@@ -31,10 +29,8 @@ const About = () => {
         </p>
       </div>
 
-      {/* 2. Sections Accordéons */}
       <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
 
-        {/* --- SECTION MON PARCOURS --- */}
         <div className="bento-card" style={{ padding: "0", minHeight: "auto", overflow: "hidden" }}>
           <button 
             onClick={() => toggleSection("parcours")}
@@ -55,10 +51,7 @@ const About = () => {
                     <div style={{ position: "absolute", left: "-27px", top: "5px", width: "12px", height: "12px", borderRadius: "50%", background: exp.type === 'education' ? "#2563eb" : "#10b981", border: "2px solid white", boxShadow: "0 0 0 2px #e2e8f0" }}></div>
                     <h4 style={{ margin: 0, fontSize: "1.05rem", color: "#0f172a", fontWeight: "600" }}>{exp.role}</h4>
                     <div style={{ fontSize: "0.85rem", color: "#64748b", marginBottom: "8px", fontWeight: "500" }}>{exp.company} • {exp.period}</div>
-                    {/* Détails optionnels (si vous voulez afficher les puces) */}
-                    {/* <ul style={{ fontSize: "0.9rem", color: "#475569", paddingLeft: "15px", margin: "5px 0" }}>
-                      {exp.details.slice(0,2).map((d, i) => <li key={i}>{d}</li>)}
-                    </ul> */}
+                   
                   </div>
                 ))}
               </div>
@@ -66,7 +59,6 @@ const About = () => {
           )}
         </div>
 
-        {/* --- SECTION MES PASSIONS --- */}
         <div className="bento-card" style={{ padding: "0", minHeight: "auto", overflow: "hidden" }}>
           <button 
             onClick={() => toggleSection("passions")}
@@ -97,7 +89,6 @@ const About = () => {
           )}
         </div>
 
-        {/* --- SECTION MES OBJECTIFS --- */}
         <div className="bento-card" style={{ padding: "0", minHeight: "auto", overflow: "hidden" }}>
           <button 
             onClick={() => toggleSection("objectifs")}
@@ -120,10 +111,9 @@ const About = () => {
 
       </div>
 
-      {/* 3. Boutons du bas */}
       <div style={{ display: "flex", gap: "15px", marginTop: "40px" }}>
         <a
-          href="/CV_Alternance_EdrisY.pdf" 
+          href="/CV_EdrisYoussef.pdf" 
   target="_blank"
           rel="noopener noreferrer"
           className="btn btn-secondary"

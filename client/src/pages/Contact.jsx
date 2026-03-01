@@ -1,10 +1,8 @@
 import { useForm, ValidationError } from '@formspree/react';
 
 const Contact = () => {
-  // Utilisation du hook Formspree avec votre ID "mwpdrlay"
   const [state, handleSubmit] = useForm("mwpdrlay");
 
-  // Si le formulaire est envoyé avec succès, on affiche ce message stylisé
   if (state.succeeded) {
     return (
       <div className="container" style={{ paddingTop: "60px", paddingBottom: "100px", maxWidth: "700px" }}>
@@ -25,7 +23,6 @@ const Contact = () => {
   return (
     <div className="container" style={{ paddingTop: "60px", paddingBottom: "100px", maxWidth: "700px" }}>
       
-      {/* En-tête */}
       <div style={{ textAlign: "center", marginBottom: "50px" }}>
         <h2 style={{ fontSize: "2.5rem", fontWeight: "800", color: "#0f172a", marginBottom: "15px" }}>
           Me Contacter
@@ -36,12 +33,10 @@ const Contact = () => {
         </p>
       </div>
 
-      {/* --- CARTE FORMULAIRE --- */}
       <div className="bento-card" style={{ padding: "40px", cursor: "default", transform: "none", boxShadow: "0 10px 40px -10px rgba(0,0,0,0.05)" }}>
         
         <form onSubmit={handleSubmit}>
           
-          {/* Champ Nom (Ajouté pour compléter) */}
           <div className="form-group">
             <label htmlFor="name" className="form-label">Nom complet</label>
             <input 
@@ -55,7 +50,6 @@ const Contact = () => {
             <ValidationError prefix="Name" field="name" errors={state.errors} style={{ color: "#ef4444", fontSize: "0.85rem", marginTop: "5px" }} />
           </div>
 
-          {/* Champ Email */}
           <div className="form-group">
             <label htmlFor="email" className="form-label">Adresse Email</label>
             <input 
@@ -69,7 +63,6 @@ const Contact = () => {
             <ValidationError prefix="Email" field="email" errors={state.errors} style={{ color: "#ef4444", fontSize: "0.85rem", marginTop: "5px" }} />
           </div>
 
-          {/* Champ Message */}
           <div className="form-group">
             <label htmlFor="message" className="form-label">Votre Message</label>
             <textarea 
@@ -84,7 +77,6 @@ const Contact = () => {
             <ValidationError prefix="Message" field="message" errors={state.errors} style={{ color: "#ef4444", fontSize: "0.85rem", marginTop: "5px" }} />
           </div>
 
-          {/* Bouton Large avec état de chargement */}
           <button 
             type="submit" 
             disabled={state.submitting} 
@@ -97,14 +89,12 @@ const Contact = () => {
         </form>
       </div>
 
-      {/* Séparateur */}
       <div style={{ display: "flex", alignItems: "center", margin: "50px 0", color: "#cbd5e1" }}>
         <div style={{ flex: 1, height: "1px", background: "#e2e8f0" }}></div>
         <span style={{ padding: "0 20px", fontSize: "0.9rem", fontWeight: "600", color: "#94a3b8", textTransform: "uppercase" }}>Ou via</span>
         <div style={{ flex: 1, height: "1px", background: "#e2e8f0" }}></div>
       </div>
 
-      {/* --- LIENS SOCIAUX --- */}
       <div>
         <a href="mailto:edris.youssef.pro@gmail.com" className="social-link">
           <div className="social-icon-box" style={{ background: "#eff6ff", color: "#2563eb" }}>@</div>
